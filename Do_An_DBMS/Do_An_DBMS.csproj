@@ -131,7 +131,6 @@
     <Compile Include="ThemCuDan.Designer.cs">
       <DependentUpon>ThemCuDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="_Test.cs" />
     <EmbeddedResource Include="ChinhSuaCanHo.resx">
       <DependentUpon>ChinhSuaCanHo.cs</DependentUpon>
     </EmbeddedResource>
