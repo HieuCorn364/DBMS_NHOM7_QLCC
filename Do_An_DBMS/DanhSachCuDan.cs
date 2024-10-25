@@ -14,6 +14,7 @@ namespace Do_An_DBMS
 {
     public partial class DanhSachCuDan : Form
     {
+        MyDB db = new MyDB();
         CuDan cudan = new CuDan();
         public DanhSachCuDan()
         {
@@ -25,9 +26,9 @@ namespace Do_An_DBMS
             loaddatacudan();
         }
 
-        private void loaddatacudan()
+        private void loaddatacudan(string query = "Select * from view_danhsachcudan")
         {
-            SqlCommand command = new SqlCommand("Select * from view_danhsachcudan");
+            SqlCommand command = new SqlCommand(query);
             data_CuDan.RowTemplate.Height = 30;
             data_CuDan.DataSource = cudan.getCuDan(command);
             data_CuDan.AllowUserToAddRows = false;
@@ -82,6 +83,35 @@ namespace Do_An_DBMS
             {
                 this.Show();  // Hiển thị lại form gốc khi form mới bị đóng
             };
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            timkiemcudan(textBox1.Text);
+        }
+        public void timkiemcudan(string tencudan)
+        {
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM dbo.TimKiemCuDanTheoTen(@TenCuDan)", db.SqlCon);
+            sqlCommand.Parameters.Add("@TenCuDan", SqlDbType.VarChar, 100).Value = tencudan;
+
+            try
+            {
+                db.openConnection();
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                // Tạo DataTable và nạp dữ liệu từ SqlDataReader
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                // Gắn dữ liệu vào DataGridView
+                data_CuDan.DataSource = dt;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }

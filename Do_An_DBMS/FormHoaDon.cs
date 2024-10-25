@@ -13,7 +13,8 @@ namespace Do_An_DBMS
 {
     public partial class FormHoaDon : Form
     {
-        string con = @"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True";
+        //string con = @"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True";
+        string con = @"Data Source=NGHIATRAN;Initial Catalog=qlcc;Integrated Security=True";
         //Đối tượng kết nối
         SqlConnection sqlConnection = null;
         //Đối tượng thực thi câu lệnh

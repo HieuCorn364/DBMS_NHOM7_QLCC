@@ -8,7 +8,8 @@ namespace Do_An_DBMS
 {
     internal class MyDB
     {
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=NGHIATRAN;Initial Catalog=qlcc;Integrated Security=True");
+        //SqlConnection sqlCon = new SqlConnection(@"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True");
         public SqlConnection SqlCon { get => sqlCon; set => sqlCon = value; }
         public void openConnection()
         {

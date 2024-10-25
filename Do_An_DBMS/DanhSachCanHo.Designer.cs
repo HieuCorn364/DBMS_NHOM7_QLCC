@@ -40,6 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_xoacanho = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_timkiem = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_CanHo)).BeginInit();
             this.SuspendLayout();
@@ -75,11 +77,11 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.data_CanHo.Location = new System.Drawing.Point(22, 106);
+            this.data_CanHo.Location = new System.Drawing.Point(0, 166);
             this.data_CanHo.Name = "data_CanHo";
             this.data_CanHo.RowHeadersWidth = 51;
             this.data_CanHo.RowTemplate.Height = 24;
-            this.data_CanHo.Size = new System.Drawing.Size(1038, 339);
+            this.data_CanHo.Size = new System.Drawing.Size(1072, 277);
             this.data_CanHo.TabIndex = 22;
             // 
             // Column1
@@ -117,7 +119,7 @@
             // btn_ThemCanHo
             // 
             this.btn_ThemCanHo.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btn_ThemCanHo.Location = new System.Drawing.Point(117, 469);
+            this.btn_ThemCanHo.Location = new System.Drawing.Point(157, 469);
             this.btn_ThemCanHo.Name = "btn_ThemCanHo";
             this.btn_ThemCanHo.Size = new System.Drawing.Size(181, 55);
             this.btn_ThemCanHo.TabIndex = 27;
@@ -128,7 +130,7 @@
             // btb_reloaddata
             // 
             this.btb_reloaddata.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btb_reloaddata.Location = new System.Drawing.Point(351, 469);
+            this.btb_reloaddata.Location = new System.Drawing.Point(408, 469);
             this.btb_reloaddata.Name = "btb_reloaddata";
             this.btb_reloaddata.Size = new System.Drawing.Size(181, 55);
             this.btb_reloaddata.TabIndex = 26;
@@ -158,7 +160,7 @@
             // btn_xoacanho
             // 
             this.btn_xoacanho.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btn_xoacanho.Location = new System.Drawing.Point(600, 469);
+            this.btn_xoacanho.Location = new System.Drawing.Point(649, 469);
             this.btn_xoacanho.Name = "btn_xoacanho";
             this.btn_xoacanho.Size = new System.Drawing.Size(181, 55);
             this.btn_xoacanho.TabIndex = 23;
@@ -166,11 +168,33 @@
             this.btn_xoacanho.UseVisualStyleBackColor = true;
             this.btn_xoacanho.Click += new System.EventHandler(this.btn_xoacanho_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(298, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Tìm kiếm:";
+            // 
+            // txt_timkiem
+            // 
+            this.txt_timkiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_timkiem.Location = new System.Drawing.Point(395, 121);
+            this.txt_timkiem.Multiline = true;
+            this.txt_timkiem.Name = "txt_timkiem";
+            this.txt_timkiem.Size = new System.Drawing.Size(360, 37);
+            this.txt_timkiem.TabIndex = 29;
+            this.txt_timkiem.TextChanged += new System.EventHandler(this.txt_timkiem_TextChanged);
+            // 
             // DanhSachCanHo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 558);
+            this.Controls.Add(this.txt_timkiem);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.data_CanHo);
             this.Controls.Add(this.btn_ThemCanHo);
@@ -203,5 +227,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_xoacanho;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_timkiem;
     }
 }

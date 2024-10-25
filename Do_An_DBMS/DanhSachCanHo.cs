@@ -14,6 +14,7 @@ namespace Do_An_DBMS
     public partial class DanhSachCanHo : Form
     {
         CanHo canho = new CanHo();
+        MyDB db = new MyDB();
         public DanhSachCanHo()
         {
             InitializeComponent();
@@ -55,6 +56,35 @@ namespace Do_An_DBMS
         private void btb_reloaddata_Click(object sender, EventArgs e)
         {
             loaddata_canho();
+        }
+
+        private void txt_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            timkiemcanho(txt_timkiem.Text); 
+        }
+        public void timkiemcanho(string text)
+        {
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM TimKiemCanHo(@keyword)", db.SqlCon);
+            sqlCommand.Parameters.Add("@keyword", SqlDbType.VarChar, 100).Value = text;
+
+            try
+            {
+                db.openConnection();
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+
+                // Tạo DataTable và nạp dữ liệu từ SqlDataReader
+                DataTable dt = new DataTable();
+                dt.Load(reader);
+
+                // Gắn dữ liệu vào DataGridView
+                data_CanHo.DataSource = dt;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }
