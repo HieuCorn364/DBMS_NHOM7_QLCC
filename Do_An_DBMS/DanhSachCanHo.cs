@@ -58,19 +58,18 @@ namespace Do_An_DBMS
             loaddata_canho();
         }
 
-        private void txt_timkiem_TextChanged(object sender, EventArgs e)
+        
+        public void timkiemcanho(string trangthai, int? makhucanho, int? maloaicanho)
         {
-            timkiemcanho(txt_timkiem.Text); 
-        }
-        public void timkiemcanho(string text)
-        {
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM TimKiemCanHo(@keyword)", db.SqlCon);
-            sqlCommand.Parameters.Add("@keyword", SqlDbType.VarChar, 100).Value = text;
+            SqlCommand command = new SqlCommand("SELECT * FROM TimKiemCanHoTheoTieuChi(@TrangThaiSuDung, @MaKhuCanHo, @MaLoaiCanHo)", db.SqlCon);
+            command.Parameters.AddWithValue("@TrangThaiSuDung", string.IsNullOrEmpty(trangthai) ? (object)DBNull.Value : trangthai);
+            command.Parameters.AddWithValue("@MaKhuCanHo", makhucanho.HasValue ? (object)makhucanho.Value : DBNull.Value);
+            command.Parameters.AddWithValue("@MaLoaiCanHo", maloaicanho.HasValue ? (object)maloaicanho.Value : DBNull.Value);
 
             try
             {
                 db.openConnection();
-                SqlDataReader reader = sqlCommand.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader();
 
                 // Tạo DataTable và nạp dữ liệu từ SqlDataReader
                 DataTable dt = new DataTable();
@@ -85,6 +84,17 @@ namespace Do_An_DBMS
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void btn_timkiem_Click(object sender, EventArgs e)
+        {
+            string trangThaiSuDung = txt_trangthai.Text.Trim();
+            int? maKhuCanHo = string.IsNullOrEmpty(txt_khucanho.Text) ? (int?)null : int.Parse(txt_khucanho.Text);
+            int? maLoaiCanHo = string.IsNullOrEmpty(txt_maloaicanho.Text) ? (int?)null : int.Parse(txt_maloaicanho.Text);
+
+            // Gọi hàm tìm kiếm
+            timkiemcanho(trangThaiSuDung, maKhuCanHo, maLoaiCanHo);
+
         }
     }
 }
