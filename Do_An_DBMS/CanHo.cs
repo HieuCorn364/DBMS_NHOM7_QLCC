@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Do_An_DBMS
 {
@@ -96,6 +98,132 @@ namespace Do_An_DBMS
                 return false;
             }
         }
+    
+        public List<List<Button>> caocap = new List<List<Button>>();
+        public List<List<Button>> trungbinh = new List<List<Button>>();
+        public List<List<Button>> coban = new List<List<Button>>();
+        #region tao slot giu xe
+
+        public void hienToa(string loai, List<List<Button>> canho, Panel pnl, Point sl, int height, int width, int kcN, Point first)
+        {
+            int n = sl.X;
+            int m = sl.Y;
+            int cnt = 0;
+            Button oldBtn = new Button() { Location = first, Width = 0 };
+            for (int i = 0; i < n; i++)
+            {
+                canho.Add(new List<Button>());
+                for (int j = 0; j < m; j++)
+                {
+                    Button btn = new Button()
+                    {
+                        Height = height,
+                        Width = width,
+                        BackColor = Color.White,
+                        Location = new Point(oldBtn.Location.X + kcN + width, oldBtn.Location.Y),
+                        Name = loai + cnt.ToString(),
+                        Tag = cnt,
+                    };
+                    btn.Click += Btn_Click;
+                    canho[i].Add(btn);
+                    pnl.Controls.Add(btn);
+                    oldBtn = btn;
+                    cnt++;
+                }
+                oldBtn.Location = new Point(first.X, oldBtn.Location.Y + height);
+                oldBtn.Width = oldBtn.Height = 0;
+            }
+
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+
+            Button btn = (Button)sender;
+            if (btn.BackColor == Color.Yellow)
+            {
+                //hien thong tin chu ho
+                if (btn.Name.ToString()[0] == 'o')
+                {
+                    ChinhSuaChuHo chinhSuaChuHo = new ChinhSuaChuHo();
+                    if (chinhSuaChuHo.ShowDialog() == DialogResult.OK)
+                    {
+                        btn.BackColor = Color.White;
+                    }
+                }
+                else if (btn.Name.ToString()[0] == 'd')
+                {
+                    ChinhSuaChuHo chinhSuaChuHo = new ChinhSuaChuHo();
+                    if (chinhSuaChuHo.ShowDialog() == DialogResult.OK)
+                    {
+                        btn.BackColor = Color.White;
+                    }
+                }   
+                else
+                {
+                    ChinhSuaChuHo chinhSuaChuHo = new ChinhSuaChuHo();
+                    //ChiTietLayXeMay ctLayXemay = new ChiTietLayXeMay((int)btn.Tag);
+                    if (chinhSuaChuHo.ShowDialog() == DialogResult.OK)
+                    {
+                        btn.BackColor = Color.White;
+                    }
+                }
+
+            }
+            else
+            {
+                //gui xe
+                if (btn.Name.ToString()[0] == 'o')
+                {
+                    ThemChuHo themchu = new ThemChuHo();
+                    //ChiTietGiuOto chiTietGiuOto = new ChiTietGiuOto((int)btn.Tag);
+                    if (themchu.ShowDialog() == DialogResult.OK)
+                    {
+                        btn.BackColor = Color.Yellow;
+                    }
+                }
+                else if (btn.Name.ToString()[0] == 'd')
+                {
+                    ThemChuHo themChuHo = new ThemChuHo();
+                    if (themChuHo.ShowDialog() == DialogResult.OK)
+                    {
+                        btn.BackColor = Color.Yellow;
+                    }
+                }
+                else
+                {
+                    ThemChuHo themChuHo = new ThemChuHo();
+                    //ChiTietGiuXeMay chiTietGiuXeMay = new ChiTietGiuXeMay((int)btn.Tag);
+                    if (themChuHo.ShowDialog() == DialogResult.OK)
+                    {
+                        btn.BackColor = Color.Yellow;
+                    }
+                }
+            }
+
+        }
+
+        public void canhoOdkBiChiem(string query, List<List<Button>> canho)
+        {
+            SqlCommand sqlCommand = new SqlCommand(query, db.SqlCon);
+            db.openConnection();
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            //lay ra so hang va so cot cua bat ky xe nao
+            int n = canho.Count;
+            int m = canho[0].Count;
+            while (reader.Read())
+            {
+                //đánh dấu lại những ô đã bị chiếm
+                int id = reader.GetInt32(0);
+                int row = id / m;
+                int col = id % m;
+                canho[row][col].BackColor = Color.Yellow;
+            }
+            reader.Close();
+            db.closeConnection();
+        }
+
+        #endregion tao slot giu xe
 
     }
 }

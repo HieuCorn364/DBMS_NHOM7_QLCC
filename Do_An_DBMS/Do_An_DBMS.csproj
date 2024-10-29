@@ -65,7 +65,26 @@
     <Compile Include="ChinhSuaCuDan.Designer.cs">
       <DependentUpon>ChinhSuaCuDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChiTietCHCaoCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietCHCaoCap.Designer.cs">
+      <DependentUpon>ChiTietCHCaoCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietCHCoBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietCHCoBan.Designer.cs">
+      <DependentUpon>ChiTietCHCoBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietCHTrungBinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietCHTrungBinh.Designer.cs">
+      <DependentUpon>ChiTietCHTrungBinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChuHo.cs" />
+    <Compile Include="Constrain.cs" />
     <Compile Include="CuDan.cs" />
     <Compile Include="DanhSachCanHo.cs">
       <SubType>Form</SubType>
@@ -112,6 +131,12 @@
     <Compile Include="MyDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLiCanHo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLiCanHo.Designer.cs">
+      <DependentUpon>QuanLiCanHo.cs</DependentUpon>
+    </Compile>
     <Compile Include="staticdata.cs" />
     <Compile Include="ThemCanHo.cs">
       <SubType>Form</SubType>
@@ -139,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChinhSuaCuDan.resx">
       <DependentUpon>ChinhSuaCuDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChiTietCHCaoCap.resx">
+      <DependentUpon>ChiTietCHCaoCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DanhSachCanHo.resx">
       <DependentUpon>DanhSachCanHo.cs</DependentUpon>
@@ -170,6 +198,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLiCanHo.resx">
+      <DependentUpon>QuanLiCanHo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThemCanHo.resx">
       <DependentUpon>ThemCanHo.cs</DependentUpon>
     </EmbeddedResource>
