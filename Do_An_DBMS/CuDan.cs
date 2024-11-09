@@ -82,5 +82,18 @@ namespace Do_An_DBMS
             db.closeConnection();
             return table;
         }
+
+        public DataTable findCuDan(int maCuDan)
+        {
+            SqlCommand command = new SqlCommand("SELECT * FROM fn_TimKiemCuDanTheoMa(@MaCuDan)", db.SqlCon);
+            command.Parameters.Add("@MaCuDan", SqlDbType.Int).Value = maCuDan;
+            db.openConnection();
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            db.closeConnection();
+            return dataTable;
+        }
+
     }
 }

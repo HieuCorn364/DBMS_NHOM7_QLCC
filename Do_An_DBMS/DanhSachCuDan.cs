@@ -83,5 +83,11 @@ namespace Do_An_DBMS
                 this.Show();  // Hiển thị lại form gốc khi form mới bị đóng
             };
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            data_CuDan.DataSource = cudan.findCuDan(int.Parse(txtTim.Text));
+            data_CuDan.AllowUserToAddRows = false;
+        }
     }
 }

@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -62,11 +62,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.2F);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(412, 41);
+            this.label1.Location = new System.Drawing.Point(408, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Danh Sách Chủ Hộ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // data_ChuHo
             // 
@@ -128,7 +129,7 @@
             // btn_ThemChuHo
             // 
             this.btn_ThemChuHo.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btn_ThemChuHo.Location = new System.Drawing.Point(84, 465);
+            this.btn_ThemChuHo.Location = new System.Drawing.Point(142, 465);
             this.btn_ThemChuHo.Name = "btn_ThemChuHo";
             this.btn_ThemChuHo.Size = new System.Drawing.Size(181, 55);
             this.btn_ThemChuHo.TabIndex = 20;
@@ -139,7 +140,7 @@
             // btb_reloaddata
             // 
             this.btb_reloaddata.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btb_reloaddata.Location = new System.Drawing.Point(353, 465);
+            this.btb_reloaddata.Location = new System.Drawing.Point(404, 465);
             this.btb_reloaddata.Name = "btb_reloaddata";
             this.btb_reloaddata.Size = new System.Drawing.Size(181, 55);
             this.btb_reloaddata.TabIndex = 19;
@@ -169,7 +170,7 @@
             // btn_xoachuho
             // 
             this.btn_xoachuho.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btn_xoachuho.Location = new System.Drawing.Point(633, 465);
+            this.btn_xoachuho.Location = new System.Drawing.Point(667, 465);
             this.btn_xoachuho.Name = "btn_xoachuho";
             this.btn_xoachuho.Size = new System.Drawing.Size(181, 55);
             this.btn_xoachuho.TabIndex = 16;
@@ -180,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.data_ChuHo);

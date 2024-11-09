@@ -66,5 +66,10 @@ namespace Do_An_DBMS
                 this.Show();  // Hiển thị lại form gốc khi form mới bị đóng
             };
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

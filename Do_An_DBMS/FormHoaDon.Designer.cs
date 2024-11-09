@@ -42,23 +42,24 @@
             // dgvHoaDon
             // 
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dgvHoaDon.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvHoaDon.Location = new System.Drawing.Point(0, 0);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(856, 472);
+            this.dgvHoaDon.Size = new System.Drawing.Size(875, 384);
             this.dgvHoaDon.TabIndex = 0;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             this.dgvHoaDon.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellDoubleClick);
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(1198, 62);
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTimKiem.Location = new System.Drawing.Point(1157, 30);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(136, 36);
             this.btnTimKiem.TabIndex = 1;
@@ -68,9 +69,10 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(881, 134);
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(1157, 296);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(242, 49);
+            this.btnThem.Size = new System.Drawing.Size(136, 67);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Tạo Hóa Đơn Cho Tháng";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -78,17 +80,18 @@
             // 
             // txtNam
             // 
-            this.txtNam.Location = new System.Drawing.Point(1042, 70);
+            this.txtNam.Location = new System.Drawing.Point(999, 38);
             this.txtNam.Multiline = true;
             this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(129, 24);
+            this.txtNam.Size = new System.Drawing.Size(109, 28);
             this.txtNam.TabIndex = 4;
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(1171, 134);
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(882, 99);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(139, 49);
+            this.btnSua.Size = new System.Drawing.Size(411, 39);
             this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Cập nhật Hóa Đơn";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -98,7 +101,7 @@
             // 
             this.lblThang.AutoSize = true;
             this.lblThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThang.Location = new System.Drawing.Point(877, 44);
+            this.lblThang.Location = new System.Drawing.Point(878, 12);
             this.lblThang.Name = "lblThang";
             this.lblThang.Size = new System.Drawing.Size(67, 22);
             this.lblThang.TabIndex = 6;
@@ -108,7 +111,7 @@
             // 
             this.lblNam.AutoSize = true;
             this.lblNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNam.Location = new System.Drawing.Point(1041, 45);
+            this.lblNam.Location = new System.Drawing.Point(1006, 13);
             this.lblNam.Name = "lblNam";
             this.lblNam.Size = new System.Drawing.Size(50, 22);
             this.lblNam.TabIndex = 7;
@@ -116,6 +119,7 @@
             // 
             // cbThang
             // 
+            this.cbThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbThang.FormattingEnabled = true;
             this.cbThang.Items.AddRange(new object[] {
             "1",
@@ -130,17 +134,17 @@
             "10",
             "11",
             "12"});
-            this.cbThang.Location = new System.Drawing.Point(880, 70);
+            this.cbThang.Location = new System.Drawing.Point(881, 38);
             this.cbThang.Name = "cbThang";
-            this.cbThang.Size = new System.Drawing.Size(118, 24);
+            this.cbThang.Size = new System.Drawing.Size(100, 28);
             this.cbThang.TabIndex = 8;
             // 
             // FormHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1356, 472);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(1311, 384);
             this.Controls.Add(this.cbThang);
             this.Controls.Add(this.lblNam);
             this.Controls.Add(this.lblThang);

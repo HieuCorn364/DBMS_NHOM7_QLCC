@@ -40,13 +40,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_xoacanho = new System.Windows.Forms.Button();
+            this.btnGiaThue = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_CanHo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -81,6 +82,7 @@
             this.data_CanHo.RowTemplate.Height = 24;
             this.data_CanHo.Size = new System.Drawing.Size(1038, 339);
             this.data_CanHo.TabIndex = 22;
+            this.data_CanHo.DoubleClick += new System.EventHandler(this.data_CanHo_DoubleClick);
             // 
             // Column1
             // 
@@ -117,7 +119,7 @@
             // btn_ThemCanHo
             // 
             this.btn_ThemCanHo.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btn_ThemCanHo.Location = new System.Drawing.Point(117, 469);
+            this.btn_ThemCanHo.Location = new System.Drawing.Point(125, 469);
             this.btn_ThemCanHo.Name = "btn_ThemCanHo";
             this.btn_ThemCanHo.Size = new System.Drawing.Size(181, 55);
             this.btn_ThemCanHo.TabIndex = 27;
@@ -128,7 +130,7 @@
             // btb_reloaddata
             // 
             this.btb_reloaddata.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btb_reloaddata.Location = new System.Drawing.Point(351, 469);
+            this.btb_reloaddata.Location = new System.Drawing.Point(361, 469);
             this.btb_reloaddata.Name = "btb_reloaddata";
             this.btb_reloaddata.Size = new System.Drawing.Size(181, 55);
             this.btb_reloaddata.TabIndex = 26;
@@ -158,7 +160,7 @@
             // btn_xoacanho
             // 
             this.btn_xoacanho.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.btn_xoacanho.Location = new System.Drawing.Point(600, 469);
+            this.btn_xoacanho.Location = new System.Drawing.Point(604, 469);
             this.btn_xoacanho.Name = "btn_xoacanho";
             this.btn_xoacanho.Size = new System.Drawing.Size(181, 55);
             this.btn_xoacanho.TabIndex = 23;
@@ -166,11 +168,24 @@
             this.btn_xoacanho.UseVisualStyleBackColor = true;
             this.btn_xoacanho.Click += new System.EventHandler(this.btn_xoacanho_Click);
             // 
+            // btnGiaThue
+            // 
+            this.btnGiaThue.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.btnGiaThue.Location = new System.Drawing.Point(848, 469);
+            this.btnGiaThue.Name = "btnGiaThue";
+            this.btnGiaThue.Size = new System.Drawing.Size(181, 55);
+            this.btnGiaThue.TabIndex = 28;
+            this.btnGiaThue.Text = "Check Gía Thuê";
+            this.btnGiaThue.UseVisualStyleBackColor = true;
+            this.btnGiaThue.Click += new System.EventHandler(this.btnGiaThue_Click);
+            // 
             // DanhSachCanHo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1072, 558);
+            this.Controls.Add(this.btnGiaThue);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.data_CanHo);
             this.Controls.Add(this.btn_ThemCanHo);
@@ -203,5 +218,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_xoacanho;
+        private System.Windows.Forms.Button btnGiaThue;
     }
 }

@@ -13,6 +13,14 @@ namespace Do_An_DBMS
 {
     public partial class DanhSachCanHo : Form
     {
+        string con = @"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True";
+        //Đối tượng kết nối
+        SqlConnection sqlConnection = null;
+        //Đối tượng thực thi câu lệnh
+        SqlCommand sqlCommand = null;
+        SqlDataAdapter sqlDataAdapter = null;
+        //Chứa dữ liệu đổ vào
+        DataTable dt = new DataTable();
         CanHo canho = new CanHo();
         public DanhSachCanHo()
         {
@@ -39,6 +47,7 @@ namespace Do_An_DBMS
         private void DanhSachCanHo_Load(object sender, EventArgs e)
         {
             loaddata_canho();
+            sqlConnection = new SqlConnection(con);
         }
 
         private void btn_xoacanho_Click(object sender, EventArgs e)
@@ -55,6 +64,39 @@ namespace Do_An_DBMS
         private void btb_reloaddata_Click(object sender, EventArgs e)
         {
             loaddata_canho();
+        }
+
+        private void data_CanHo_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGiaThue_Click(object sender, EventArgs e)
+        {
+            int maCanHo = int.Parse(data_CanHo.CurrentRow.Cells[0].Value.ToString());
+
+            string query = "SELECT dbo.fn_LayTienThueCanHo(@MaCanHo) AS TienThue";
+            try
+            {
+                // Mở kết nối
+                sqlConnection.Open();
+
+                using (sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.Add("@MaCanHo", SqlDbType.Int).Value = maCanHo;
+                    sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                    decimal tienThue = (decimal)sqlCommand.ExecuteScalar();
+                    Console.WriteLine($"Tiền thuê của căn hộ {maCanHo} là: {tienThue}");
+                    MessageBox.Show("tIỀN THUÊ CỦA CĂN HỘ NÀY LÀ: " + tienThue);                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
     }
 }

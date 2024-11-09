@@ -49,8 +49,8 @@ namespace Do_An_DBMS
                     sqlCommand.CommandType = CommandType.StoredProcedure;
                     sqlCommand.Parameters.Add(new SqlParameter("@MaHoaDon", SqlDbType.Int)).Value = maHD;
                     sqlCommand.Parameters.Add(new SqlParameter("@SoDien", SqlDbType.Int)).Value = int.Parse(txtDien.Text);
-                    sqlCommand.Parameters.Add(new SqlParameter("@SoKhoiNuoc", SqlDbType.Int)).Value = int.Parse(txtDien.Text);
-                    sqlCommand.Parameters.Add(new SqlParameter("@SoXe", SqlDbType.Int)).Value = int.Parse(txtDien.Text);
+                    sqlCommand.Parameters.Add(new SqlParameter("@SoKhoiNuoc", SqlDbType.Int)).Value = int.Parse(txtNuoc.Text);
+                    sqlCommand.Parameters.Add(new SqlParameter("@SoXe", SqlDbType.Int)).Value = int.Parse(txtXe.Text);
                     sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Đã cập nhật dữ liệu hóa đơn thành công!");
                 }

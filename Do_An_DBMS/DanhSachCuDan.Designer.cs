@@ -39,16 +39,17 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btb_reloaddata = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_CuDan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -149,20 +150,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.label2.Location = new System.Drawing.Point(168, 125);
+            this.label2.Location = new System.Drawing.Point(144, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 21);
             this.label2.TabIndex = 11;
             this.label2.Text = "Tìm kiếm cư dân:";
             // 
-            // textBox1
+            // txtTim
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F);
-            this.textBox1.Location = new System.Drawing.Point(354, 122);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 35);
-            this.textBox1.TabIndex = 10;
+            this.txtTim.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.txtTim.Location = new System.Drawing.Point(320, 122);
+            this.txtTim.Multiline = true;
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(356, 35);
+            this.txtTim.TabIndex = 10;
             // 
             // button1
             // 
@@ -186,17 +187,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.btnTimKiem.Location = new System.Drawing.Point(708, 125);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(181, 32);
+            this.btnTimKiem.TabIndex = 14;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // DanhSachCuDan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(975, 616);
+            this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.data_CuDan);
             this.Controls.Add(this.btb_reloaddata);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTim);
             this.Controls.Add(this.button1);
             this.Name = "DanhSachCuDan";
             this.Text = "DanhSachCuDan";
@@ -222,8 +236,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btb_reloaddata;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }
