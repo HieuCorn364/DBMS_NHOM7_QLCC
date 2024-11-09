@@ -16,7 +16,21 @@ namespace Do_An_DBMS
     {
         CuDan cudan = new CuDan();
         MyDB db = new MyDB();
-        public ChinhSuaCuDan()
+
+        //Singleton pattern
+        private static ChinhSuaCuDan instance;
+        public static ChinhSuaCuDan Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ChinhSuaCuDan();
+                }
+                return instance;
+            }
+        }
+        private ChinhSuaCuDan()
         {
             InitializeComponent();
         }

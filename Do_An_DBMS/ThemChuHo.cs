@@ -14,7 +14,20 @@ namespace Do_An_DBMS
     public partial class ThemChuHo : Form
     {
         ChuHo chuho = new ChuHo();
-        public ThemChuHo()
+        //Singleton Pattern
+        private static ThemChuHo instance;
+        public static ThemChuHo Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ThemChuHo();
+                }
+                return instance;
+            }
+        }
+        private ThemChuHo()
         {
             InitializeComponent();
         }

@@ -15,7 +15,20 @@ namespace Do_An_DBMS
     public partial class DanhSachCuDan : Form
     {
         CuDan cudan = new CuDan();
-        public DanhSachCuDan()
+        //Singleton pattern
+        private static DanhSachCuDan instance;
+        public static DanhSachCuDan Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new DanhSachCuDan();
+                }
+                return instance;
+            }
+        }
+        private DanhSachCuDan()
         {
             InitializeComponent();
         }
@@ -35,7 +48,7 @@ namespace Do_An_DBMS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ThemCuDan themCuDan = new ThemCuDan();
+            ThemCuDan themCuDan = ThemCuDan.Instance;
             themCuDan.ShowDialog();
         }
 
@@ -57,7 +70,7 @@ namespace Do_An_DBMS
 
         private void data_CuDan_DoubleClick(object sender, EventArgs e)
         {
-            ChinhSuaCuDan chinhsuacudan = new ChinhSuaCuDan();
+            ChinhSuaCuDan chinhsuacudan = ChinhSuaCuDan.Instance;
             staticdata.Macudan = int.Parse(data_CuDan.CurrentRow.Cells[0].Value.ToString());
             chinhsuacudan.txt_Hoten.Text = data_CuDan.CurrentRow.Cells[1].Value.ToString();
             chinhsuacudan.txt_Sdt.Text = data_CuDan.CurrentRow.Cells[2].Value.ToString();

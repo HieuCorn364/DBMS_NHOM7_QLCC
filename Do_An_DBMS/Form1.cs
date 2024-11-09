@@ -13,7 +13,7 @@ namespace Do_An_DBMS
 {
     public partial class Form1 : Form
     {
-        string con = @"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True";
+        string con = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DADBMS;Integrated Security=True";
         //Đối tượng kết nối
         SqlConnection sqlConnection = null;
         //Đối tượng thực thi câu lệnh
@@ -82,25 +82,25 @@ namespace Do_An_DBMS
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            FormHoaDon formHoaDon = new FormHoaDon();
+            FormHoaDon formHoaDon = FormHoaDon.Instance;
             formHoaDon.ShowDialog();
         }
 
         private void btnCanHo_Click(object sender, EventArgs e)
         {
-            DanhSachCuDan danhSachCuDan = new DanhSachCuDan();
+            DanhSachCuDan danhSachCuDan = DanhSachCuDan.Instance;
             danhSachCuDan.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DanhSachChuHo danhSachChuHo = new DanhSachChuHo();
+            DanhSachChuHo danhSachChuHo = DanhSachChuHo.Instance;
             danhSachChuHo.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DanhSachCanHo danhSachCanHo = new DanhSachCanHo();
+            DanhSachCanHo danhSachCanHo = DanhSachCanHo.Instance;
             danhSachCanHo.ShowDialog();
         }
     }

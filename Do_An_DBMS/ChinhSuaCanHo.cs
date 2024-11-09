@@ -12,7 +12,20 @@ namespace Do_An_DBMS
 {
     public partial class ChinhSuaCanHo : Form
     {
-        public ChinhSuaCanHo()
+        //Singleton Pattern
+        private static ChinhSuaCanHo instance;
+        public static ChinhSuaCanHo Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ChinhSuaCanHo();
+                }
+                return instance;
+            }
+        }
+        private ChinhSuaCanHo()
         {
             InitializeComponent();
         }

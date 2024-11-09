@@ -13,7 +13,21 @@ namespace Do_An_DBMS
     public partial class ThemCanHo : Form
     {
         CanHo canho = new CanHo();
-        public ThemCanHo()
+
+        //Singleton pattern
+        private static ThemCanHo instance;
+        public static ThemCanHo Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ThemCanHo();
+                }
+                return instance;
+            }
+        }
+        private ThemCanHo()
         {
             InitializeComponent();
         }

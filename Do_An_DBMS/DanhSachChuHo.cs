@@ -16,7 +16,20 @@ namespace Do_An_DBMS
     {
         MyDB db = new MyDB();
         ChuHo chuho = new ChuHo();
-        public DanhSachChuHo()
+        //Singleton pattern
+        private static DanhSachChuHo instance;
+        public static DanhSachChuHo Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new DanhSachChuHo();
+                }
+                return instance;
+            }
+        }
+        private DanhSachChuHo()
         {
             InitializeComponent();
         }
@@ -39,7 +52,7 @@ namespace Do_An_DBMS
 
         private void btn_ThemChuHo_Click(object sender, EventArgs e)
         {
-            ThemChuHo themchuho = new ThemChuHo();
+            ThemChuHo themchuho = ThemChuHo.Instance;
             this.Hide();
             themchuho.Show();
             themchuho.FormClosed += (s, args) => {
@@ -49,7 +62,7 @@ namespace Do_An_DBMS
 
         private void data_ChuHo_DoubleClick(object sender, EventArgs e)
         {
-            ChinhSuaChuHo chinhsuachuho = new ChinhSuaChuHo();
+            ChinhSuaChuHo chinhsuachuho = ChinhSuaChuHo.Instance;
             chinhsuachuho.txt_machuho.Text = data_ChuHo.CurrentRow.Cells[0].Value.ToString();
             staticdata.machuho = int.Parse(data_ChuHo.CurrentRow.Cells[0].Value.ToString());
             chinhsuachuho.ngaybatdau.Value = (DateTime)data_ChuHo.CurrentRow.Cells[1].Value;

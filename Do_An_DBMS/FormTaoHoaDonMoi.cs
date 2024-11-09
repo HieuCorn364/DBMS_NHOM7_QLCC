@@ -14,7 +14,7 @@ namespace Do_An_DBMS
     public partial class FormTaoHoaDonMoi : Form
     {
         int maHD;
-        string con = @"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True";
+        string con = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DADBMS;Integrated Security=True";
         //Đối tượng kết nối
         SqlConnection sqlConnection = null;
         //Đối tượng thực thi câu lệnh

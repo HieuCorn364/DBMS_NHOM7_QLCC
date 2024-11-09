@@ -15,7 +15,21 @@ namespace Do_An_DBMS
     {
         MyDB db = new MyDB();
         CuDan cudan = new CuDan();
-        public ThemCuDan()
+
+        //Singleton Pattern
+        private static ThemCuDan instance;
+        public static ThemCuDan Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new ThemCuDan();
+                }
+                return instance;
+            }
+        }
+        private ThemCuDan()
         {
             InitializeComponent();
         }

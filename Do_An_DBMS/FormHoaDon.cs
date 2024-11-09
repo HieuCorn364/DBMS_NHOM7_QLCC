@@ -13,7 +13,7 @@ namespace Do_An_DBMS
 {
     public partial class FormHoaDon : Form
     {
-        string con = @"Data Source=DESKTOP-TPG17OF;Initial Catalog=QuanLyChungCu;Integrated Security=True";
+        string con = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DADBMS;Integrated Security=True";
         //Đối tượng kết nối
         SqlConnection sqlConnection = null;
         //Đối tượng thực thi câu lệnh
@@ -21,7 +21,22 @@ namespace Do_An_DBMS
         SqlDataAdapter sqlDataAdapter = null;
         //Chứa dữ liệu đổ vào
         DataTable dt = new DataTable();
-        public FormHoaDon()
+        //Singleton Pattern
+        private static FormHoaDon instance;
+
+        public static FormHoaDon Instance
+        {
+            get
+            {
+                if (instance == null || instance.IsDisposed)
+                {
+                    instance = new FormHoaDon();
+                }
+                return instance;
+            }
+        }
+
+        private FormHoaDon()
         {
             InitializeComponent();
         }
